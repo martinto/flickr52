@@ -2,12 +2,17 @@
 
 <p>
   <strong>Year:</strong>
-  <%= @challenge.year %>
+  <%= @challenge.year.year %>
 </p>
 
 <p>
   <strong>Title:</strong>
   <%= @challenge.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @challenge.url %>
 </p>
 
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |

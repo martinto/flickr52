@@ -13,11 +13,17 @@
 
   <div class="field">
     <%= f.label :year %><br>
-    <%= f.date_select :year %>
+    <%= select_year @challenge.year, :start_year => Time.now.year - 2, :end_year => Time.now.year + 2, :field_name => 'year(1i)', :prefix => :challenge %>
+    <%= f.hidden_field 'year(2i)', value: 1 %>
+    <%= f.hidden_field 'year(3i)', value: 1 %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, size: 40 %>
   </div>
   <div class="actions">
     <%= f.submit %>
