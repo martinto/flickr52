@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-#  resources :weeks
+  resources :challenges do
+    resources :weeks
+    delete 'clear_weeks' => 'weeks#clear', as: :clear_weeks
+  end
 
-  get 'weeks/:challenge' => 'weeks#index', as: :weeks
-  get 'weeks/:challenge/:id/edit' => 'weeks#edit', as: :edit_week
-  get 'weeks/:challenge/:id' => 'weeks#show', as: :week
-  post 'weeks/:id' => 'weeks#update'
-
-  resources :challenges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

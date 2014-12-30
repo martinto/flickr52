@@ -1,40 +1,45 @@
 class WeeksController < ApplicationController
   before_action :set_week, only: [:show, :edit, :update, :destroy]
 
-  # GET /weeks/:challenge
-  # GET /weeks/:challenge.json
+  # GET /challenges/:challenge_id/weeks
+  # GET/challenges/:challenge_id/weeks.json
   def index
-    challenge_id = params[:challenge]
+    challenge_id = params[:challenge_id]
     @challenge = Challenge.find(challenge_id)
     @weeks = Week.where :challenge_id => challenge_id
   end
 
-  # GET /weeks/:challenge/1
-  # GET /weeks/:challenge/1.json
+  # GET /challenges/:challenge_id/weeks/:id
+  # GET /weeks/1.json
   def show
-    @challenge_id = params[:challenge]
-    @week = Week.where(:challenge_id => @challenge_id, :id => params[:id]).first
+    challenge_id = params[:challenge_id]
+    @challenge = Challenge.find(challenge_id)
   end
 
-  # GET /weeks/new
+  # GET /challenges/:challenge_id/weeks/new
   def new
-    @week = Week.new
+    challenge_id = params[:challenge_id]
+    @challenge = Challenge.find(challenge_id)
+    @week = Week.new id: 1
+    @post_url = challenge_weeks_path
   end
 
-  # GET /weeks/:challenge/1/edit
+  # GET /challenges/:challenge_id/weeks/:id/edit
   def edit
-    @challenge_id = params[:challenge]
-    @week = Week.where(:challenge_id => @challenge_id, :id => params[:id]).first
+    challenge_id = params[:challenge_id]
+    @challenge = Challenge.find(challenge_id)
+    @week = Week.find(params[:id])
+    @post_url = challenge_week_path
   end
 
-  # POST /weeks
+  # POST /challenges/:challenge_id/weeks
   # POST /weeks.json
   def create
     @week = Week.new(week_params)
 
     respond_to do |format|
       if @week.save
-        format.html { redirect_to @week, notice: 'Week was successfully created.' }
+        format.html { redirect_to({ action: :show, challenge_id: params[:challenge_id], id: @week.id}, notice: 'Week was successfully created.' ) }
         format.json { render :show, status: :created, location: @week }
       else
         format.html { render :new }
@@ -43,12 +48,12 @@ class WeeksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /weeks/1
+  # PATCH/PUT /challenges/:challenge_id/weeks/:id
   # PATCH/PUT /weeks/1.json
   def update
     respond_to do |format|
       if @week.update(week_params)
-        format.html { redirect_to @week, notice: 'Week was successfully updated.' }
+        format.html { redirect_to({ action: :show, challenge_id: params[:challenge_id], id: @week.id}, notice: 'Week was successfully updated.' )}
         format.json { render :show, status: :ok, location: @week }
       else
         format.html { render :edit }
@@ -62,9 +67,15 @@ class WeeksController < ApplicationController
   def destroy
     @week.destroy
     respond_to do |format|
-      format.html { redirect_to weeks_url, notice: 'Week was successfully destroyed.' }
+      format.html { redirect_to challenge_weeks_url, notice: 'Week was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # DELETE /challenges/:challenge_id/weeks/clear
+  def clear
+    Week.where(:challenge_id =>  params[:challenge_id]).destroy_all
+    redirect_to({ action: :index, challenge_id: params[:challenge_id]})
   end
 
   private
@@ -75,6 +86,6 @@ class WeeksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def week_params
-      params.require(:week).permit(:week_number, :subject)
+      params.require(:week).permit(:week_number, :subject, :challenge_id)
     end
 end
