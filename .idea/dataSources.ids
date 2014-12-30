@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails flickr52: development" uuid="f369b641-76ab-4f3f-9fb9-fbefaaee139b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails flickr52: test" uuid="1f48cacd-dcdb-4137-8bf0-193654ab17c7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails flickr52: production" uuid="c3bac3b6-a95f-4db8-a3f2-10cf63031bff">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

@@ -1,0 +1,26 @@
+<h1>Listing challenges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Year</th>
+      <th style="text-align: left">Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @challenges.each do |challenge| %>
+      <tr>
+        <td><%= challenge.year %></td>
+        <td><%= challenge.title %></td>
+        <td><%= link_to 'Show', weeks_path(challenge) %></td>
+        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Challenge', new_challenge_path %>

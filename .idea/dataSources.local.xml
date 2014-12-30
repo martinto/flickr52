@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails flickr52: development" uuid="f369b641-76ab-4f3f-9fb9-fbefaaee139b">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails flickr52: test" uuid="1f48cacd-dcdb-4137-8bf0-193654ab17c7">
+      <first-sync>true</first-sync>
+      <user-name>flickr52</user-name>
+      <user-password>dfdedfcfdfcbdf9edfdedfdddfc5</user-password>
+    </data-source>
+    <data-source name="Rails flickr52: production" uuid="c3bac3b6-a95f-4db8-a3f2-10cf63031bff">
+      <first-sync>true</first-sync>
+      <user-name>flickr52</user-name>
+      <user-password>dfdedfcfdfcbdf9edfdedfdddfc5</user-password>
+    </data-source>
+  </component>
+</project>
