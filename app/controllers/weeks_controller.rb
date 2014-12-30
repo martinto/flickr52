@@ -62,6 +62,23 @@ class WeeksController < ApplicationController
     end
   end
 
+  # GET /challenges/:challenge_id/bulk
+  def bulk_add
+    @challenge = Challenge.find(params[:challenge_id])
+  end
+
+  # POST /challenges/:challenge_id/bulk
+  def bulk_post
+    subjects = params[:bulk_names]
+    challenge_id = params[:challenge_id]
+    week_number = 1
+    subjects.split(/\n/).each do |subject|
+      Week.create! week_number: week_number, subject: subject, challenge_id: challenge_id
+      week_number += 1
+    end
+    redirect_to challenge_weeks_url(params[:challenge_id])
+  end
+
   # DELETE /weeks/1
   # DELETE /weeks/1.json
   def destroy

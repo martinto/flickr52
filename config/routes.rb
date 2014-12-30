@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :challenges do
     resources :weeks
     delete 'clear_weeks' => 'weeks#clear', as: :clear_weeks
+    post 'bulk' => 'weeks#bulk_post', as: :bulk_post
+    get 'bulk' => 'weeks#bulk_add', as: :bulk_add
   end
 
 

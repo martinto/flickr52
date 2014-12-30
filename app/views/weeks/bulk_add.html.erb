@@ -1,0 +1,9 @@
+<%= form_tag do %>
+    <div class="field">
+      <%= text_area_tag(:message, 'Paste subjects here one per line', size: '48x52', name: :bulk_names) %>
+      <%= hidden_field_tag(:challenge_id, @challenge.id) %>
+    </div>
+    <div class="actions">
+        <%= submit_tag('Create') %>
+    </div>
+<% end %>
