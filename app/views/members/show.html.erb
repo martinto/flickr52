@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr><td>nsid</td><td><%= @member.nsid %></td></tr>
+  <tr><td>username</td><td><%= @member.username %></td></tr>
+  <tr><td>icon_server</td><td><%= @member.icon_server %></td></tr>
+  <tr><td>icon_farm</td><td><%= @member.icon_farm %></td></tr>
+  <tr><td>member_type</td><td><%= @member.member_type %></td></tr>
+  <tr><td>real_name</td><td><%= @member.real_name %></td></tr>
+  <tr><td>email</td><td><%= @member.email %></td></tr>
+</table>
+
+<%= link_to 'Back', challenge_members_path %>
