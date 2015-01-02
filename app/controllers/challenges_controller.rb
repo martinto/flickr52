@@ -7,6 +7,13 @@ class ChallengesController < ApplicationController
     @challenges = Challenge.all
   end
 
+  # PUT /challenges/1/flickr_update
+  def flickr_update
+    challenge = Challenge.find(params[:challenge_id])
+    challenge.update_from_flickr
+    redirect_to challenges_path
+  end
+
   # GET /challenges/1
   # GET /challenges/1.json
   def show

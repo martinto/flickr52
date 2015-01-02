@@ -14,8 +14,10 @@
       <tr>
         <td><%= challenge.year.year %></td>
         <td><%= challenge.title %></td>
-        <td><%= link_to 'Show', challenge_weeks_path(challenge) %></td>
+        <td><%= challenge.flickr_id ? challenge.flickr_id : 'null' %></td>
+        <td><%= link_to 'Weeks', challenge_weeks_path(challenge) %></td>
         <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
+        <td><%= link_to('Update from Flickr', challenge_flickr_update_path(challenge), method: :put) %></td>
       </tr>
     <% end %>
   </tbody>

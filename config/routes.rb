@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   resources :challenges do
     resources :weeks
     delete 'clear_weeks' => 'weeks#clear', as: :clear_weeks
     post 'bulk' => 'weeks#bulk_post', as: :bulk_post
     get 'bulk' => 'weeks#bulk_add', as: :bulk_add
+    put ':challenge_id/flickr_update' => 'challenges#flickr_update', as: :flickr_update
   end
 
 

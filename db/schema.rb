@@ -11,12 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230160042) do
+ActiveRecord::Schema.define(version: 20150101215504) do
 
   create_table "challenges", force: true do |t|
     t.date     "year"
     t.string   "title"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "flickr_id"
+  end
+
+  create_table "challenges_members", id: false, force: true do |t|
+    t.integer "challenge_id"
+    t.integer "member_id"
+  end
+
+  add_index "challenges_members", ["challenge_id"], name: "index_challenges_members_on_challenge_id", using: :btree
+  add_index "challenges_members", ["member_id"], name: "index_challenges_members_on_member_id", using: :btree
+
+  create_table "members", force: true do |t|
+    t.string   "nsid"
+    t.string   "username"
+    t.integer  "icon_server"
+    t.integer  "icon_farm"
+    t.integer  "member_type"
+    t.string   "real_name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.integer  "flickr_id"
+    t.integer  "challenge_id"
+    t.integer  "owner_id"
+    t.string   "secret"
+    t.integer  "server"
+    t.integer  "farm"
+    t.string   "title"
+    t.boolean  "is_public"
+    t.boolean  "is_friend"
+    t.boolean  "is_family"
+    t.datetime "date_added"
+    t.datetime "date_uploaded"
+    t.datetime "date_taken"
+    t.integer  "date_taken_granularity"
+    t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
