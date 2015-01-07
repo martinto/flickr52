@@ -22,7 +22,7 @@ class Challenge < ActiveRecord::Base
       if Member.exists?(nsid: m['nsid'])
         member = Member.find_by_nsid m['nsid']
       else
-        member = Member.create! :nsid => m['nsid'], :username => m['username'], :icon_server => m['iconserver'], :icon_farm => m['iconfarm'], :member_type => m['membertype'], :real_name => m['realname']
+        member = Member.create! :nsid => m['nsid'], :username => m['username'], :member_type => m['membertype'], :real_name => m['realname']
       end
       # Does this challenge include this member?
       unless self.members.find_by_nsid(member.nsid)
@@ -38,10 +38,28 @@ class Challenge < ActiveRecord::Base
     photos = flickr_group.group_photos
     # [{"id"=>"16152566212", "owner"=>"57460915@N07", "secret"=>"8e5277be2c", "server"=>"7572", "farm"=>8, "title"=>"Old Country Roses Pattern", "ispublic"=>1, "isfriend"=>0, "isfamily"=>0, "ownername"=>"jscollins7", "dateadded"=>"1420004161", "dateupload"=>"1420004160", "datetaken"=>"2014-12-23 08:27:48", "datetakengranularity"=>"0", "datetakenunknown"=>"0", "tags"=>"ch2014wk51"}
     photos.each do |p|
-      unless Photo.exists?(flickr_id: p['id'])
-        photo = Photo.create! flickr_id: p['id'].to_i, secret: p['secret'], server: p['server'], farm: p['farm'],
-                              title: p['title'], is_public: p['ispublic'] == 1, is_friend: p['isfriend'] == 1,
-                              is_family: p['isfamily'] == 1, date_added: Time.at(p['dateadded'].to_i),
+      if Photo.exists?(flickr_id: p['id'])
+        # Update the entry.
+        photo = Photo.find_by_flickr_id p['id']
+        unless photo
+          EventLog.create! when: Time.now, message: "Unable to find photo #{p['id']}"
+        else
+          unless same_photo_data?(p, photo)
+            secret = p['secret']
+            title = p['title']
+            is_public = p['ispublic'] == 1
+            date_added = Time.at(p['dateadded'].to_i)
+            date_uploaded = Time.at(p['dateuploaded'].to_i)
+            date_taken = Date.parse(p['datetaken'])
+            date_taken_granularity = p['datetakengranularity'].to_i
+            tags = p['tags']
+            save!
+          end
+        end
+      else
+        photo = Photo.create! flickr_id: p['id'].to_i, secret: p['secret'],
+                              title: p['title'], is_public: p['ispublic'] == 1,
+                              date_added: Time.at(p['dateadded'].to_i),
                               date_uploaded: Time.at(p['dateuploaded'].to_i), date_taken: Date.parse(p['datetaken']),
                               date_taken_granularity: p['datetakengranularity'].to_i, tags: p['tags']
         self.photos << photo
@@ -61,7 +79,7 @@ class Challenge < ActiveRecord::Base
         else
           m = FlickrApi.person(p['owner'])
           if m
-            member = Member.create! :nsid => m['nsid'], :username => m['username'], :icon_server => m['iconserver'], :icon_farm => m['iconfarm'], :member_type => 0, :real_name => m['realname']
+            member = Member.create! :nsid => m['nsid'], :username => m['username'], :member_type => 0, :real_name => m['realname']
             self.members << member # Must have been a member at some point.
             member.photos << photo
           else
@@ -71,5 +89,18 @@ class Challenge < ActiveRecord::Base
         photo.save!
       end
     end
+  end
+
+  private
+
+  def same_photo_data?(p, photo)
+    (p['secret'] == photo.secret) &&
+        (p['title'] == photo.title) &&
+        (p['ispublic'] == photo.is_public) &&
+        (Time.at(p['dateadded'].to_i) == photo.date_added) &&
+        (Time.at(p['dateuploaded'].to_i) == photo.date_uploaded) &&
+        (Date.parse(p['datetaken']) == photo.date_taken) &&
+        (p['datetakengranularity'].to_i == photo.date_taken_granularity) &&
+        (p['tags'] == photo.tags)
   end
 end

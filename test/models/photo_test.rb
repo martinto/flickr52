@@ -3,8 +3,8 @@ require 'test_helper'
 class PhotoTest < ActiveSupport::TestCase
 
   def setup
-    @photo = Photo.create! flickr_id: 16152566212, secret: "8e5277be2c", server: "7572", farm: 8,
-                          title: "Old Country Roses Pattern", is_public: true, is_friend: false,
+    @photo = Photo.create! flickr_id: 16152566212, secret: "8e5277be2c",
+                          title: "Old Country Roses Pattern", is_public: true,
                           is_family: false, date_added: Time.at(1420004161),
                           date_uploaded: Time.at(1420004160), date_taken: Date.parse("2014-12-23 08:27:48"),
                           date_taken_granularity: 0, tags: "ch2014wk51"

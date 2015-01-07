@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103183856) do
+ActiveRecord::Schema.define(version: 20150107072707) do
 
   create_table "challenges", force: true do |t|
     t.date     "year"
@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 20150103183856) do
   create_table "members", force: true do |t|
     t.string   "nsid"
     t.string   "username"
-    t.integer  "icon_server"
-    t.integer  "icon_farm"
     t.integer  "member_type"
     t.string   "real_name"
     t.string   "email"
@@ -55,12 +53,8 @@ ActiveRecord::Schema.define(version: 20150103183856) do
     t.integer  "challenge_id"
     t.integer  "member_id"
     t.string   "secret"
-    t.integer  "server"
-    t.integer  "farm"
     t.string   "title"
     t.boolean  "is_public"
-    t.boolean  "is_friend"
-    t.boolean  "is_family"
     t.datetime "date_added"
     t.datetime "date_uploaded"
     t.datetime "date_taken"
