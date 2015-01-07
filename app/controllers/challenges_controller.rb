@@ -14,6 +14,11 @@ class ChallengesController < ApplicationController
     redirect_to challenges_path
   end
 
+  def flickr_check_photos
+    @challenge = Challenge.find(params[:challenge_id])
+    @photos = @challenge.flickr_check_photos
+  end
+
   # GET /challenges/1
   # GET /challenges/1.json
   def show

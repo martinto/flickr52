@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  when: 2015-01-03 18:38:56
+  message: MyString
+  backtrace: MyText
+
+two:
+  when: 2015-01-03 18:38:56
+  message: MyString
+  backtrace: MyText

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101215504) do
+ActiveRecord::Schema.define(version: 20150103183856) do
 
   create_table "challenges", force: true do |t|
     t.date     "year"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20150101215504) do
   add_index "challenges_members", ["challenge_id"], name: "index_challenges_members_on_challenge_id", using: :btree
   add_index "challenges_members", ["member_id"], name: "index_challenges_members_on_member_id", using: :btree
 
+  create_table "event_logs", force: true do |t|
+    t.datetime "when"
+    t.string   "message"
+    t.text     "backtrace"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "members", force: true do |t|
     t.string   "nsid"
     t.string   "username"
@@ -43,9 +51,9 @@ ActiveRecord::Schema.define(version: 20150101215504) do
   end
 
   create_table "photos", force: true do |t|
-    t.integer  "flickr_id"
+    t.integer  "flickr_id",              limit: 8
     t.integer  "challenge_id"
-    t.integer  "owner_id"
+    t.integer  "member_id"
     t.string   "secret"
     t.integer  "server"
     t.integer  "farm"
@@ -57,9 +65,10 @@ ActiveRecord::Schema.define(version: 20150101215504) do
     t.datetime "date_uploaded"
     t.datetime "date_taken"
     t.integer  "date_taken_granularity"
-    t.string   "tags"
+    t.text     "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "week_id"
   end
 
   create_table "weeks", force: true do |t|
