@@ -8,7 +8,7 @@
   </thead>
   <tbody>
   <% @wrong.each do |error| %>
-      <tr><td><%= error[:photo].member.display_name %></td><td><%= error[:message] %></td><td>[<a href="<%= error[:url] %>">photo</a>]</td></tr>
+      <tr><td><%= error[:photo].member.display_name %></td><td><%= error[:message] %></td><td>[<a href="<%= error[:url] %>">photo</a>] [<%= link_to 'send email', challenge_send_email_url(@challenge, error[:photo], error: @error_type), method: :put %>]</td></tr>
   <% end %>
   </tbody>
 </table>

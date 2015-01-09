@@ -1,0 +1,18 @@
+<p>Dear <%= @photo.member.display_name %>,</p>
+<p>
+  Your image "<a href="<%= @photo.get_flickr_url %>"><%= @photo.title %></a>" was taken at <%= @photo.date_taken.to_formatted_s(:long_ordinal) %>
+  which isn't in <%= @photo.challenge.year.year %>.
+</p>
+<p>
+  There are a couple of reasons for this:
+</p>
+<ul>
+  <li>Your camera isn't set to the correct time and date so please check that.</li>
+  <li>You edited the image and your editor messed up the taken date and time (this is quite common).
+    It is possible to fix the date and time in Photoshop or Lightroom and probably in other
+    programs, but if you don't know how to do that don't bother.</li>
+</ul>
+<p>
+  In either case let me know and I will ignore the date and time.
+</p>
+<p></em>Martin</em></p>

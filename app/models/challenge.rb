@@ -80,22 +80,22 @@ class Challenge < ActiveRecord::Base
           EventLog.create! when: Time.now, message: "Unable to find photo #{p['id']}"
         else
           unless same_photo_data?(p, photo)
-            secret = p['secret']
-            title = p['title']
-            is_public = p['ispublic'] == 1
-            date_added = Time.at(p['dateadded'].to_i)
-            date_uploaded = Time.at(p['dateuploaded'].to_i)
-            date_taken = Date.parse(p['datetaken'])
-            date_taken_granularity = p['datetakengranularity'].to_i
-            tags = p['tags']
-            save!
+            photo.secret = p['secret']
+            photo.title = p['title']
+            photo.is_public = p['ispublic'] == 1
+            photo.date_added = Time.at(p['dateadded'].to_i)
+            photo.date_uploaded = Time.at(p['dateuploaded'].to_i)
+            photo.date_taken = Time.parse(p['datetaken'])
+            photo.date_taken_granularity = p['datetakengranularity'].to_i
+            photo.tags = p['tags']
+            photo.save!
           end
         end
       else
         photo = Photo.create! flickr_id: p['id'].to_i, secret: p['secret'],
                               title: p['title'], is_public: p['ispublic'] == 1,
                               date_added: Time.at(p['dateadded'].to_i),
-                              date_uploaded: Time.at(p['dateuploaded'].to_i), date_taken: Date.parse(p['datetaken']),
+                              date_uploaded: Time.at(p['dateuploaded'].to_i), date_taken: Time.parse(p['datetaken']),
                               date_taken_granularity: p['datetakengranularity'].to_i, tags: p['tags']
         self.photos << photo
         if photo.taken_in_year?(year.year)
@@ -131,10 +131,10 @@ class Challenge < ActiveRecord::Base
   def same_photo_data?(p, photo)
     (p['secret'] == photo.secret) &&
         (p['title'] == photo.title) &&
-        (p['ispublic'] == photo.is_public) &&
+        ((p['ispublic'] == 1) == photo.is_public) &&
         (Time.at(p['dateadded'].to_i) == photo.date_added) &&
         (Time.at(p['dateuploaded'].to_i) == photo.date_uploaded) &&
-        (Date.parse(p['datetaken']) == photo.date_taken) &&
+        (Time.parse(p['datetaken']) == photo.date_taken) &&
         (p['datetakengranularity'].to_i == photo.date_taken_granularity) &&
         (p['tags'] == photo.tags)
   end

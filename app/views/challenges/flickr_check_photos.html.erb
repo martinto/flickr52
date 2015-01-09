@@ -1,14 +1,17 @@
 <h1>Errors for <%= @challenge.title %></h1>
 
-<% @wrong = @errors[:wrong_year] %>
+<% @wrong = @errors[:wrong_year]
+   @error_type = :wrong_year %>
 <h2>Wrong Year</h2>
 <%= render 'show_errors' %>
 
-<% @wrong = @errors[:no_tag] %>
+<% @wrong = @errors[:no_tag]
+   @error_type = :no_tag %>
 <h2>No Tag</h2>
 <%= render 'show_errors' %>
 
 
-<% @wrong = @errors[:wrong_tag] %>
+<% @wrong = @errors[:wrong_tag]
+   @error_type = :wrong_tag %>
 <h2>Wrong Tag</h2>
 <%= render 'show_errors' %>

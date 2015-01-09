@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     delete 'clear_weeks' => 'weeks#clear', as: :clear_weeks
     post 'bulk' => 'weeks#bulk_post', as: :bulk_post
     get 'bulk' => 'weeks#bulk_add', as: :bulk_add
-    put ':challenge_id/flickr_update' => 'challenges#flickr_update', as: :flickr_update
-    get ':challenge_id/flickr_check_photos' => 'challenges#flickr_check_photos', as: :flickr_check_photos
+    put 'flickr_update' => 'challenges#flickr_update', as: :flickr_update
+    get 'flickr_check_photos' => 'challenges#flickr_check_photos', as: :flickr_check_photos
+    put 'send_email/:id' => 'challenges#send_email', as: :send_email
 
     # Membership
     resources :members

@@ -73,6 +73,21 @@ class ChallengesController < ApplicationController
     end
   end
 
+  # PUT /challenges/2/send_email/1305
+  def send_email
+    photo_id = params[:id]
+    photo = Photo.find(photo_id)
+    error_type = params[:error]
+    if error_type == 'wrong_year'
+      MemberMailer.wrong_year_email(photo).deliver
+    elsif error_type == 'no_tag'
+      MemberMailer.no_tag_email(photo).deliver
+    elsif error_type == 'wrong_tag'
+      MemberMailer.wrong_tag_email(photo).deliver
+    end
+    redirect_to challenge_flickr_check_photos_url(params[:challenge_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
