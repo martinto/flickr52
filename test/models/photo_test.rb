@@ -5,7 +5,7 @@ class PhotoTest < ActiveSupport::TestCase
   def setup
     @photo = Photo.create! flickr_id: 16152566212, secret: "8e5277be2c",
                           title: "Old Country Roses Pattern", is_public: true,
-                          is_family: false, date_added: Time.at(1420004161),
+                          date_added: Time.at(1420004161),
                           date_uploaded: Time.at(1420004160), date_taken: Date.parse("2014-12-23 08:27:48"),
                           date_taken_granularity: 0, tags: "ch2014wk51"
   end
@@ -36,6 +36,11 @@ class PhotoTest < ActiveSupport::TestCase
     @photo.save!
     week_no = @photo.week_number
     assert_equal 2, week_no
+  end
+
+  test 'get photo url' do
+    url = @photo.get_flickr_url
+    assert_equal 'https://www.flickr.com/photos/johnecollins/16152566212/', url
   end
 
 end

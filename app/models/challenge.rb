@@ -9,6 +9,11 @@ class Challenge < ActiveRecord::Base
 
   def update_from_flickr
     flickr_group = FlickrApi.new(url)
+    update_group_members(flickr_group)
+    update_group_photo_data(flickr_group)
+  end
+
+  def update_group_members(flickr_group)
     if self.flickr_id.nil?
       self.flickr_id = flickr_group.group_info['id']
       save!
@@ -34,7 +39,37 @@ class Challenge < ActiveRecord::Base
   end
 
   def flickr_check_photos
-    flickr_group = FlickrApi.new(url)
+    wrong_year = Array.new
+    wrong_tag = Array.new
+    no_tag = Array.new
+    topics = topic_list
+    photos.each do |p|
+      # Add code for if this error has been dealt with. (next)
+      unless p.taken_in_year?(year.year)
+        wrong_year << { photo: p, message: "'#{p.title}' was taken in #{p.date_taken.year} for the #{year.year} challenge", url: p.get_flickr_url }
+      else
+        # Now check that the tag matches the year and the week.
+        correct_week_tag = "ch#{year.year}wk#{p.week_number}"
+        week_tag = ''
+        tag_week_no = false
+        p.tags.split(/\s/).each do |tag|
+          if match_data = /(ch#{year.year}wk)(\d+)/.match(tag)
+            week_tag = match_data[1] + match_data[2]
+            tag_week_no = match_data[2]
+          end
+        end
+        if week_tag.empty?
+          no_tag << { photo: p, message: "No challenge tag, it should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
+        elsif week_tag != correct_week_tag
+          tagged_topic = topics[tag_week_no.to_i]
+          wrong_tag << { photo: p,  message: "Incorrect challenge tag of #{week_tag} (#{tagged_topic}), it should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
+        end
+      end
+    end
+    { wrong_year: wrong_year, no_tag: no_tag, wrong_tag: wrong_tag }
+  end
+
+  def update_group_photo_data(flickr_group)
     photos = flickr_group.group_photos
     # [{"id"=>"16152566212", "owner"=>"57460915@N07", "secret"=>"8e5277be2c", "server"=>"7572", "farm"=>8, "title"=>"Old Country Roses Pattern", "ispublic"=>1, "isfriend"=>0, "isfamily"=>0, "ownername"=>"jscollins7", "dateadded"=>"1420004161", "dateupload"=>"1420004160", "datetaken"=>"2014-12-23 08:27:48", "datetakengranularity"=>"0", "datetakenunknown"=>"0", "tags"=>"ch2014wk51"}
     photos.each do |p|
@@ -102,5 +137,13 @@ class Challenge < ActiveRecord::Base
         (Date.parse(p['datetaken']) == photo.date_taken) &&
         (p['datetakengranularity'].to_i == photo.date_taken_granularity) &&
         (p['tags'] == photo.tags)
+  end
+
+  def topic_list
+    result = Array.new
+    weeks.each do |week|
+      result[week.week_number] = week.subject
+    end
+    return result
   end
 end

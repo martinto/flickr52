@@ -1,0 +1,14 @@
+<table>
+  <thead>
+  <tr>
+    <th style="text-align: left">User</th>
+    <th style="text-align: left">Error</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @wrong.each do |error| %>
+      <tr><td><%= error[:photo].member.display_name %></td><td><%= error[:message] %></td><td>[<a href="<%= error[:url] %>">photo</a>]</td></tr>
+  <% end %>
+  </tbody>
+</table>

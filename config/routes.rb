@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post 'bulk' => 'weeks#bulk_post', as: :bulk_post
     get 'bulk' => 'weeks#bulk_add', as: :bulk_add
     put ':challenge_id/flickr_update' => 'challenges#flickr_update', as: :flickr_update
-    put ':challenge_id/flickr_check_photos' => 'challenges#flickr_check_photos', as: :flickr_check_photos
+    get ':challenge_id/flickr_check_photos' => 'challenges#flickr_check_photos', as: :flickr_check_photos
 
     # Membership
     resources :members

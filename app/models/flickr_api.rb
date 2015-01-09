@@ -57,6 +57,12 @@ class FlickrApi
     return info
   end
 
+  def self.photo_info(photo_id, secret)
+    FlickrApi.login
+    info = flickr.photos.getInfo(:photo_id => photo_id, :secret => secret)
+    return info
+  end
+
 private
   @@logged_in_to_flickr = false
 end

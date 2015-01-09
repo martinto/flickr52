@@ -19,7 +19,7 @@
         <td><%= link_to 'Members', challenge_members_path(challenge) %></td>
         <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
         <td><%= link_to('Update from Flickr', challenge_flickr_update_path(challenge), method: :put) %></td>
-        <td><%= link_to('Check photos',  challenge_flickr_check_photos_path(challenge), method: :put) %></td>
+        <td><%= link_to('Check photos',  challenge_flickr_check_photos_path(challenge), method: :get) %></td>
       </tr>
     <% end %>
   </tbody>

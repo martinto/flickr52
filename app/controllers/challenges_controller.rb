@@ -16,7 +16,7 @@ class ChallengesController < ApplicationController
 
   def flickr_check_photos
     @challenge = Challenge.find(params[:challenge_id])
-    @photos = @challenge.flickr_check_photos
+    @errors = @challenge.flickr_check_photos
   end
 
   # GET /challenges/1
