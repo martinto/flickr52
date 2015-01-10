@@ -1,6 +1,6 @@
 Dear <%= @photo.member.display_name %>
 
-Your image "<%= @photo.title %>" (%= @photo.get_flickr_url %) has no tag. Each week the tag to use is shown in
+Your image "<%= @photo.title %>" (<%= @photo.get_flickr_url %>) has no tag. Each week the tag to use is shown in
 the group's status. This photo was taken at <%= @photo.date_taken.to_formatted_s(:long_ordinal) %> in week <%= @photo.week.week_number %>
 so it should have the tag ch<%= @photo.challenge.year.year %>wk<%= @photo.week.week_number %> for the topic <%= @photo.week.subject %>.
 

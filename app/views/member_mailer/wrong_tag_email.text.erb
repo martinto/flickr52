@@ -1,0 +1,13 @@
+Dear <%= @photo.member.display_name %>,
+
+Your image "<%= @photo.title %>" (<%= @photo.get_flickr_url %>) has a tag <%= @photo.challenge_tag(@photo.challenge.year.year) %> which is
+the tag for the topic "<%= @photo.challenge.topic(@photo.tagged_as_week) %>". This photo was taken at <%= @photo.date_taken.to_formatted_s(:long_ordinal) %> in week <%= @photo.week.week_number %>
+so it should have the tag ch<%= @photo.challenge.year.year %>wk<%= @photo.week.week_number %> for the topic <%= @photo.week.subject %>.
+
+It would be very helpful if you would correct the tag.
+
+If you took this outside of the designated week, that isn't a big problem, just let me know by replying to this email.
+
+Thanks.
+
+Martin

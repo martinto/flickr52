@@ -126,6 +126,11 @@ class Challenge < ActiveRecord::Base
     end
   end
 
+  def topic(week_number)
+    week = Week.where(challenge_id: self.id, week_number: week_number).first
+    return week.subject
+  end
+
   private
 
   def same_photo_data?(p, photo)

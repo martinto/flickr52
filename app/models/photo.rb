@@ -52,4 +52,24 @@ class Photo < ActiveRecord::Base
     end
     return self.flickr_url
   end
+
+  def challenge_tag(year)
+    week_tag = ''
+    self.tags.split(/\s/).each do |tag|
+      if match_data = /(ch#{year}wk)(\d+)/.match(tag)
+        week_tag = match_data[1] + match_data[2]
+      end
+    end
+    return week_tag
+  end
+
+  def tagged_as_week
+    tag_week_no = false
+    self.tags.split(/\s/).each do |tag|
+      if match_data = /(ch\d+wk)(\d+)/.match(tag)
+        tag_week_no = match_data[2]
+      end
+    end
+    return tag_week_no
+  end
 end
