@@ -8,13 +8,6 @@ class FlickrApiTest < ActiveSupport::TestCase
     assert_equal '92191771@N00', user_data['id']
   end
 
-  test 'get group info from url' do
-    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
-    group_info = flickr_api.group_info
-    assert_equal '2453086@N23', group_info['id']
-    assert_equal 'Challenge 2014', group_info['groupname']
-  end
-
   test 'get group members' do
     flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
     members = flickr_api.group_members
@@ -25,9 +18,9 @@ class FlickrApiTest < ActiveSupport::TestCase
   end
 
   test 'get group photos' do
-    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
+    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2013/')
     photos = flickr_api.group_photos
-    assert_equal 1793, photos.count
+    assert_equal 1304, photos.count
   end
 
   test 'get person info' do
@@ -35,5 +28,17 @@ class FlickrApiTest < ActiveSupport::TestCase
     # "{"id"=>"92191771@N00", "nsid"=>"92191771@N00", "ispro"=>1, "can_buy_pro"=>0, "iconserver"=>"7523", "iconfarm"=>8, "path_alias"=>"martintomes", "username"=>"MartinTomes", "realname"=>"Martin Tomes", "mbox_sha1sum"=>"f4a3038b693f31caee2c7598f8893301e91d60a1", "location"=>"Steyning, UK", "timezone"=>{"label"=>"GMT: Dublin, Edinburgh, Lisbon, London", "offset"=>"+00:00"}, "description"=>"", "photosurl"=>"https://www.flickr.com/photos/martintomes/", "profileurl"=>"https://www.flickr.com/people/martintomes/", "mobileurl"=>"https://m.flickr.com/photostream.gne?id=184248", "photos"=>{"firstdatetaken"=>"2003-03-22 10:57:57", "firstdate"=>"1126505411", "count"=>6499, "views"=>"7237"}}"
     assert_equal 'martintomes', info['path_alias']
     assert_equal 'MartinTomes', info['username']
+  end
+
+  test 'get photo info' do
+    info = FlickrApi.photo_info('11673783214', 'de91d3bb99')
+    assert_equal 'Travel Life', info['title']
+  end
+
+  test 'get group info from url' do
+    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
+    group_info = flickr_api.group_info
+    assert_equal '2453086@N23', group_info['id']
+    assert_equal 'Challenge 2014', group_info['groupname']
   end
 end
