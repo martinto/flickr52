@@ -80,5 +80,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address:              'localhost',
       port:                 25,
-      domain:               'tomes.org'}
+      domain:               'tomes.org',
+      enable_starttls_auto: false  }
 end
