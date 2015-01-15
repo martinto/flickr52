@@ -41,3 +41,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # For this application
 gem 'flickraw'
 
+# This happens to exclude these gems on Windows, I already have them as part of rubyinstaller.
+gem 'execjs', :platforms => :ruby
+gem 'therubyracer', :platforms => :ruby
