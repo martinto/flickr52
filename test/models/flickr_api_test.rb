@@ -20,7 +20,7 @@ class FlickrApiTest < ActiveSupport::TestCase
   test 'get group photos' do
     flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2013/')
     photos = flickr_api.group_photos
-    assert_equal 1304, photos.count
+    assert_equal 1303, photos.count
   end
 
   test 'get person info' do

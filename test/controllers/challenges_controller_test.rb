@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class ChallengesControllerTest < ActionController::TestCase
-  setup do
-    @challenge = challenges(:one)
-  end
-
   test "should get index" do
     get :index
     assert_response :success

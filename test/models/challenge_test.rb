@@ -63,7 +63,7 @@ class ChallengeTest < ActiveSupport::TestCase
     @challenge.update_from_flickr
     assert_equal 39, @challenge.members.count
     assert_equal 23, @challenge.members.where('member_type != 0').count
-    assert_equal 1304, @challenge.photos.count
+    assert_equal 1303, @challenge.photos.count
   end
 
   test 'topic for week' do

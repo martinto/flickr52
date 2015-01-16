@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class WeeksControllerTest < ActionController::TestCase
-  setup do
-    @week = weeks(:one)
-  end
-
   test "should get index" do
     get :index
     assert_response :success
