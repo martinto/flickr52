@@ -1,1 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+---
+challenges_001:
+  id: 1
+  year: 2013-01-01
+  title: Challenge 2013
+  url: http://www.flickr.com/groups/challenge2013/
+  created_at: 2015-01-02 17:02:39.000000000 Z
+  updated_at: 2015-01-03 10:59:15.000000000 Z
+  flickr_id: 2090036@N24
+challenges_002:
+  id: 2
+  year: 2014-01-01
+  title: Challenge 2014
+  url: http://www.flickr.com/groups/challenge2014/
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:07:23.000000000 Z
+  flickr_id: 2453086@N23

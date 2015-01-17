@@ -1,1 +1,729 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+---
+weeks_001:
+  id: 1
+  week_number: 1
+  subject: Silhouettes
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_002:
+  id: 2
+  week_number: 2
+  subject: Self portraits
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_003:
+  id: 3
+  week_number: 3
+  subject: Mono
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_004:
+  id: 4
+  week_number: 4
+  subject: Looking up/down
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_005:
+  id: 5
+  week_number: 5
+  subject: Slow shutter
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_006:
+  id: 6
+  week_number: 6
+  subject: Strangers /Candids
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_007:
+  id: 7
+  week_number: 7
+  subject: Doors
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_008:
+  id: 8
+  week_number: 8
+  subject: Abstracts
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_009:
+  id: 9
+  week_number: 9
+  subject: Still life
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_010:
+  id: 10
+  week_number: 10
+  subject: Contrasts
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_011:
+  id: 11
+  week_number: 11
+  subject: Within a 15 minute walk from your house
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_012:
+  id: 12
+  week_number: 12
+  subject: Minimalism
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_013:
+  id: 13
+  week_number: 13
+  subject: Your version of a famous photo or painting
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_014:
+  id: 14
+  week_number: 14
+  subject: 35mm (or other fixed focal length)
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_015:
+  id: 15
+  week_number: 15
+  subject: Night photography
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_016:
+  id: 16
+  week_number: 16
+  subject: Fences
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_017:
+  id: 17
+  week_number: 17
+  subject: Use software to create a composite
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_018:
+  id: 18
+  week_number: 18
+  subject: Portraits
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_019:
+  id: 19
+  week_number: 19
+  subject: A photo of the same subject for 7days
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_020:
+  id: 20
+  week_number: 20
+  subject: Blur
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_021:
+  id: 21
+  week_number: 21
+  subject: Holes
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_022:
+  id: 22
+  week_number: 22
+  subject: Ice
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_023:
+  id: 23
+  week_number: 23
+  subject: Panning
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_024:
+  id: 24
+  week_number: 24
+  subject: Architecture
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_025:
+  id: 25
+  week_number: 25
+  subject: Body parts ( keep it clean folks ;)
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_026:
+  id: 26
+  week_number: 26
+  subject: Textures
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_027:
+  id: 27
+  week_number: 27
+  subject: Wildlife
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_028:
+  id: 28
+  week_number: 28
+  subject: Transport
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_029:
+  id: 29
+  week_number: 29
+  subject: Friendship
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_030:
+  id: 30
+  week_number: 30
+  subject: Trees
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_031:
+  id: 31
+  week_number: 31
+  subject: Flash photography
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_032:
+  id: 32
+  week_number: 32
+  subject: Food/Edibles/Consumables/ Beverages
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_033:
+  id: 33
+  week_number: 33
+  subject: Something spotty/dotty
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_034:
+  id: 34
+  week_number: 34
+  subject: Macro
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_035:
+  id: 35
+  week_number: 35
+  subject: People at work
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_036:
+  id: 36
+  week_number: 36
+  subject: Forced perspective
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_037:
+  id: 37
+  week_number: 37
+  subject: As seen on TV
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_038:
+  id: 38
+  week_number: 38
+  subject: Symmetry
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_039:
+  id: 39
+  week_number: 39
+  subject: A shape (round, square, etc)
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_040:
+  id: 40
+  week_number: 40
+  subject: Panorama
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_041:
+  id: 41
+  week_number: 41
+  subject: Water
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_042:
+  id: 42
+  week_number: 42
+  subject: Landscape
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_043:
+  id: 43
+  week_number: 43
+  subject: High contrast
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_044:
+  id: 44
+  week_number: 44
+  subject: Colour
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_045:
+  id: 45
+  week_number: 45
+  subject: Fire
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_046:
+  id: 46
+  week_number: 46
+  subject: Tilt shift
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_047:
+  id: 47
+  week_number: 47
+  subject: Bridges
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_048:
+  id: 48
+  week_number: 48
+  subject: Benches or places to sit
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_049:
+  id: 49
+  week_number: 49
+  subject: Zoom burst
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_050:
+  id: 50
+  week_number: 50
+  subject: Lightpainting
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_051:
+  id: 51
+  week_number: 51
+  subject: Multiple exposure
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_052:
+  id: 52
+  week_number: 52
+  subject: Reflections
+  challenge_id: 1
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_053:
+  id: 53
+  week_number: 1
+  subject: Chocolate
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_054:
+  id: 54
+  week_number: 2
+  subject: Swirls
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_055:
+  id: 55
+  week_number: 3
+  subject: Hats
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_056:
+  id: 56
+  week_number: 4
+  subject: Sepia-toned
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_057:
+  id: 57
+  week_number: 5
+  subject: Home
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_058:
+  id: 58
+  week_number: 6
+  subject: Posterisation
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_059:
+  id: 59
+  week_number: 7
+  subject: Low key
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_060:
+  id: 60
+  week_number: 8
+  subject: Behind the scenes
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_061:
+  id: 61
+  week_number: 9
+  subject: Windows
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_062:
+  id: 62
+  week_number: 10
+  subject: A memorial
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_063:
+  id: 63
+  week_number: 11
+  subject: 'Long Exposure '
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_064:
+  id: 64
+  week_number: 12
+  subject: Lunchtime
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_065:
+  id: 65
+  week_number: 13
+  subject: The Sign Says
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_066:
+  id: 66
+  week_number: 14
+  subject: Nostalgic
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_067:
+  id: 67
+  week_number: 15
+  subject: One Shot, Two Ways
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_068:
+  id: 68
+  week_number: 16
+  subject: Layers
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_069:
+  id: 69
+  week_number: 17
+  subject: Shadow patterns
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_070:
+  id: 70
+  week_number: 18
+  subject: Horizon
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:40.000000000 Z
+  updated_at: 2015-01-02 17:02:40.000000000 Z
+weeks_071:
+  id: 71
+  week_number: 19
+  subject: Saturated
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_072:
+  id: 72
+  week_number: 20
+  subject: Curves
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_073:
+  id: 73
+  week_number: 21
+  subject: Mechanical
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_074:
+  id: 74
+  week_number: 22
+  subject: Leaves/foliage
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_075:
+  id: 75
+  week_number: 23
+  subject: Focus
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_076:
+  id: 76
+  week_number: 24
+  subject: Rivers/canals/lakes (must be inland waterways)
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_077:
+  id: 77
+  week_number: 25
+  subject: Churches
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_078:
+  id: 78
+  week_number: 26
+  subject: Dilapidation/ruins/seen better days.
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_079:
+  id: 79
+  week_number: 27
+  subject: An Unusual Point Of View
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_080:
+  id: 80
+  week_number: 28
+  subject: Infinite
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_081:
+  id: 81
+  week_number: 29
+  subject: Boats
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_082:
+  id: 82
+  week_number: 30
+  subject: Colour
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_083:
+  id: 83
+  week_number: 31
+  subject: In the Background
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_084:
+  id: 84
+  week_number: 32
+  subject: Good Morning!
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_085:
+  id: 85
+  week_number: 33
+  subject: Rears
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_086:
+  id: 86
+  week_number: 34
+  subject: Trains/buses/public transport
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_087:
+  id: 87
+  week_number: 35
+  subject: Statuary
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_088:
+  id: 88
+  week_number: 36
+  subject: Shoes
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_089:
+  id: 89
+  week_number: 37
+  subject: A big sky
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_090:
+  id: 90
+  week_number: 38
+  subject: High key
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_091:
+  id: 91
+  week_number: 39
+  subject: My Neighbourhood
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_092:
+  id: 92
+  week_number: 40
+  subject: Tools
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_093:
+  id: 93
+  week_number: 41
+  subject: A Day in My Life (multi-photo challenge)
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_094:
+  id: 94
+  week_number: 42
+  subject: Seascape
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:41.000000000 Z
+  updated_at: 2015-01-02 17:02:41.000000000 Z
+weeks_095:
+  id: 95
+  week_number: 43
+  subject: Change
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_096:
+  id: 96
+  week_number: 44
+  subject: Timepieces
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_097:
+  id: 97
+  week_number: 45
+  subject: Illumination
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_098:
+  id: 98
+  week_number: 46
+  subject: Lamp light
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_099:
+  id: 99
+  week_number: 47
+  subject: Inside
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_100:
+  id: 100
+  week_number: 48
+  subject: Eerie
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_101:
+  id: 101
+  week_number: 49
+  subject: Trees with no leaves
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_102:
+  id: 102
+  week_number: 50
+  subject: HDR
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_103:
+  id: 103
+  week_number: 51
+  subject: Pattern
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z
+weeks_104:
+  id: 104
+  week_number: 52
+  subject: Let There Be Light!
+  challenge_id: 2
+  created_at: 2015-01-02 17:02:42.000000000 Z
+  updated_at: 2015-01-02 17:02:42.000000000 Z

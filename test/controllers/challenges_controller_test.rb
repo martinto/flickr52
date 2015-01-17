@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class ChallengesControllerTest < ActionController::TestCase
+  def setup
+    @challenge = Challenge.find(1)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,7 +18,7 @@ class ChallengesControllerTest < ActionController::TestCase
 
   test "should create challenge" do
     assert_difference('Challenge.count') do
-      post :create, challenge: { title: @challenge.title, year: @challenge.year }
+      post :create, challenge: { title: 'Challenge 2016', year: 2016 }
     end
 
     assert_redirected_to challenge_path(assigns(:challenge))

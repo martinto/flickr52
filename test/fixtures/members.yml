@@ -1,1 +1,532 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+---
+members_001:
+  id: 1
+  nsid: 93469079@N04
+  username: msmoooey
+  member_type: 2
+  real_name: Mandy
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_002:
+  id: 2
+  nsid: 57460915@N07
+  username: jscollins7
+  member_type: 2
+  real_name: John Collins
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_003:
+  id: 3
+  nsid: 51051867@N07
+  username: stephaniepc
+  member_type: 2
+  real_name: Stephanie Collins
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_004:
+  id: 4
+  nsid: 41364751@N02
+  username: owlyphotography
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_005:
+  id: 5
+  nsid: 7618245@N03
+  username: eannen
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_006:
+  id: 6
+  nsid: 16980091@N06
+  username: tpbermingham
+  member_type: 2
+  real_name: Terence Bermingham
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_007:
+  id: 7
+  nsid: 91393471@N02
+  username: AG Storrington
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_008:
+  id: 8
+  nsid: 90850454@N05
+  username: morganenthusiast
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_009:
+  id: 9
+  nsid: 60349833@N02
+  username: kayakingjanet
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_010:
+  id: 10
+  nsid: 21523795@N07
+  username: janeecee
+  member_type: 2
+  real_name: Jane Coward
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_011:
+  id: 11
+  nsid: 43653301@N04
+  username: Liz Barber
+  member_type: 4
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_012:
+  id: 12
+  nsid: 7304808@N02
+  username: photothudd
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_013:
+  id: 13
+  nsid: 22310427@N08
+  username: Malcolm Bull
+  member_type: 2
+  real_name: Malcolm Bull
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_014:
+  id: 14
+  nsid: 85149462@N07
+  username: T.Ferris 
+  member_type: 2
+  real_name: Troy F
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_015:
+  id: 15
+  nsid: 57821189@N00
+  username: cazphoto.co.uk
+  member_type: 2
+  real_name: Caroline Mockett ARPS
+  email: 
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-02 17:07:24.000000000 Z
+members_016:
+  id: 16
+  nsid: 92191771@N00
+  username: MartinTomes
+  member_type: 4
+  real_name: Martin Tomes
+  email: martin@tomes.org.uk
+  created_at: 2015-01-02 17:07:24.000000000 Z
+  updated_at: 2015-01-03 10:54:34.000000000 Z
+members_017:
+  id: 17
+  nsid: 85053878@N06
+  username: Optical Force
+  member_type: 2
+  real_name: David  Hausen
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_018:
+  id: 18
+  nsid: 79351001@N04
+  username: philc59
+  member_type: 2
+  real_name: Phil Crookes
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_019:
+  id: 19
+  nsid: 45829644@N07
+  username: Coralines
+  member_type: 2
+  real_name: Ima Gic
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_020:
+  id: 20
+  nsid: 57744786@N08
+  username: Alistair Hamill
+  member_type: 2
+  real_name: Alistair Hamill
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_021:
+  id: 21
+  nsid: 39017694@N00
+  username: '*sarah b*'
+  member_type: 2
+  real_name: Sarah Brigden
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_022:
+  id: 22
+  nsid: 26157838@N03
+  username: HarleyCwboy
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_023:
+  id: 23
+  nsid: 67497562@N00
+  username: Northants Images
+  member_type: 2
+  real_name: David Kennedy
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_024:
+  id: 24
+  nsid: 63729034@N04
+  username: Sarah Tett
+  member_type: 2
+  real_name: ''
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_025:
+  id: 25
+  nsid: 16518092@N04
+  username: debs.pics
+  member_type: 2
+  real_name: Debra Stevens
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_026:
+  id: 26
+  nsid: 49275303@N07
+  username: 'CutieClick(:'
+  member_type: 2
+  real_name: Hannah Joy
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_027:
+  id: 27
+  nsid: 64441474@N06
+  username: Au Kirk
+  member_type: 2
+  real_name: Austin Kirk
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_028:
+  id: 28
+  nsid: 29014496@N05
+  username: ~ken phelan~
+  member_type: 2
+  real_name: Ken Phelan
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_029:
+  id: 29
+  nsid: 38262074@N05
+  username: jim_jimmy_james
+  member_type: 2
+  real_name: J M
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_030:
+  id: 30
+  nsid: 29926807@N08
+  username: cloesner
+  member_type: 2
+  real_name: Chuck Loesner
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_031:
+  id: 31
+  nsid: 28557399@N07
+  username: astrum24
+  member_type: 2
+  real_name: Sonia Dunmall
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_032:
+  id: 32
+  nsid: 57336981@N02
+  username: K-O-M
+  member_type: 2
+  real_name: Kathy Morton
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_033:
+  id: 33
+  nsid: 23904101@N04
+  username: Darren Wilkin
+  member_type: 2
+  real_name: Darren Wilkin
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_034:
+  id: 34
+  nsid: 22785670@N04
+  username: Paul Dunmall
+  member_type: 4
+  real_name: Paul Dunmall CPAGB
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_035:
+  id: 35
+  nsid: 74722917@N07
+  username: LisaMMugs
+  member_type: 4
+  real_name: Lisa
+  email: 
+  created_at: 2015-01-03 10:59:16.000000000 Z
+  updated_at: 2015-01-03 10:59:16.000000000 Z
+members_036:
+  id: 36
+  nsid: 64335806@N05
+  username: O_Orava
+  member_type: 0
+  real_name: 
+  email: 
+  created_at: 2015-01-05 07:46:15.000000000 Z
+  updated_at: 2015-01-05 07:46:15.000000000 Z
+members_037:
+  id: 37
+  nsid: 73088501@N07
+  username: Mandy Willard
+  member_type: 0
+  real_name: Mandy Willard
+  email: 
+  created_at: 2015-01-05 07:47:21.000000000 Z
+  updated_at: 2015-01-05 07:47:21.000000000 Z
+members_038:
+  id: 38
+  nsid: 25627938@N07
+  username: Niki Roberts
+  member_type: 0
+  real_name: Niki Roberts
+  email: 
+  created_at: 2015-01-05 07:47:26.000000000 Z
+  updated_at: 2015-01-05 07:47:26.000000000 Z
+members_039:
+  id: 39
+  nsid: 26881501@N05
+  username: chocoholicbumpkin
+  member_type: 0
+  real_name: Julie Mitchell
+  email: 
+  created_at: 2015-01-05 07:47:28.000000000 Z
+  updated_at: 2015-01-05 07:47:28.000000000 Z
+members_040:
+  id: 40
+  nsid: 7711207@N08
+  username: Andrea Peacock
+  member_type: 0
+  real_name: Andrea
+  email: 
+  created_at: 2015-01-05 07:47:32.000000000 Z
+  updated_at: 2015-01-05 07:47:32.000000000 Z
+members_041:
+  id: 41
+  nsid: 54443501@N03
+  username: Chizuka2010 (*On once a week*)
+  member_type: 0
+  real_name: Lucie
+  email: 
+  created_at: 2015-01-05 07:47:38.000000000 Z
+  updated_at: 2015-01-05 07:47:38.000000000 Z
+members_042:
+  id: 42
+  nsid: 12533224@N00
+  username: Silverstone
+  member_type: 0
+  real_name: ''
+  email: 
+  created_at: 2015-01-05 07:47:43.000000000 Z
+  updated_at: 2015-01-05 07:47:43.000000000 Z
+members_043:
+  id: 43
+  nsid: 43868507@N08
+  username: PerkyJude
+  member_type: 0
+  real_name: Jude STEWART
+  email: 
+  created_at: 2015-01-05 07:47:45.000000000 Z
+  updated_at: 2015-01-05 07:47:45.000000000 Z
+members_044:
+  id: 44
+  nsid: 63260351@N05
+  username: captivephotons
+  member_type: 0
+  real_name: Graham Moss
+  email: 
+  created_at: 2015-01-05 07:47:48.000000000 Z
+  updated_at: 2015-01-05 07:47:48.000000000 Z
+members_045:
+  id: 45
+  nsid: 16498310@N08
+  username: Dai Jazz
+  member_type: 0
+  real_name: 
+  email: 
+  created_at: 2015-01-05 07:47:50.000000000 Z
+  updated_at: 2015-01-05 07:47:50.000000000 Z
+members_046:
+  id: 46
+  nsid: 80461101@N04
+  username: Mia Cox...
+  member_type: 0
+  real_name: 
+  email: 
+  created_at: 2015-01-05 07:48:03.000000000 Z
+  updated_at: 2015-01-05 07:48:03.000000000 Z
+members_047:
+  id: 47
+  nsid: 26613312@N08
+  username: Kenny Boy1
+  member_type: 0
+  real_name: Ken Woods LRPS
+  email: 
+  created_at: 2015-01-05 07:48:09.000000000 Z
+  updated_at: 2015-01-05 07:48:09.000000000 Z
+members_048:
+  id: 48
+  nsid: 13767355@N00
+  username: spuzzum42
+  member_type: 0
+  real_name: ''
+  email: 
+  created_at: 2015-01-05 07:48:24.000000000 Z
+  updated_at: 2015-01-05 07:48:24.000000000 Z
+members_049:
+  id: 49
+  nsid: 63443369@N02
+  username: triggerhappy4
+  member_type: 0
+  real_name: Jake Stanton
+  email: 
+  created_at: 2015-01-05 07:48:33.000000000 Z
+  updated_at: 2015-01-05 07:48:33.000000000 Z
+members_050:
+  id: 50
+  nsid: 38124940@N03
+  username: looloo68
+  member_type: 0
+  real_name: Emma
+  email: 
+  created_at: 2015-01-05 07:48:35.000000000 Z
+  updated_at: 2015-01-05 07:48:35.000000000 Z
+members_051:
+  id: 51
+  nsid: 88321130@N06
+  username: AmandaT Photos :)
+  member_type: 0
+  real_name: 
+  email: 
+  created_at: 2015-01-05 07:48:38.000000000 Z
+  updated_at: 2015-01-05 07:48:38.000000000 Z
+members_052:
+  id: 52
+  nsid: 29891104@N00
+  username: uwe20
+  member_type: 0
+  real_name: Uwe Stengele
+  email: 
+  created_at: 2015-01-05 07:52:23.000000000 Z
+  updated_at: 2015-01-05 07:52:23.000000000 Z
+members_053:
+  id: 53
+  nsid: 44176468@N03
+  username: JudyPilk
+  member_type: 0
+  real_name: Judith Yeats
+  email: 
+  created_at: 2015-01-05 07:53:12.000000000 Z
+  updated_at: 2015-01-05 07:53:12.000000000 Z
+members_054:
+  id: 54
+  nsid: 112943220@N03
+  username: daisy.miller20
+  member_type: 0
+  real_name: Daisy Miller
+  email: 
+  created_at: 2015-01-05 07:53:15.000000000 Z
+  updated_at: 2015-01-05 07:53:15.000000000 Z
+members_055:
+  id: 55
+  nsid: 86756067@N04
+  username: pbjrphoto
+  member_type: 0
+  real_name: ''
+  email: 
+  created_at: 2015-01-05 07:53:18.000000000 Z
+  updated_at: 2015-01-05 07:53:18.000000000 Z
+members_056:
+  id: 56
+  nsid: 19396658@N00
+  username: ♔ Georgie R
+  member_type: 0
+  real_name: George Redgrave
+  email: 
+  created_at: 2015-01-05 07:53:24.000000000 Z
+  updated_at: 2015-01-05 07:53:24.000000000 Z
+members_057:
+  id: 57
+  nsid: 61198748@N02
+  username: derekgrieve2011
+  member_type: 0
+  real_name: Derek Grieve
+  email: 
+  created_at: 2015-01-05 07:53:26.000000000 Z
+  updated_at: 2015-01-05 07:53:26.000000000 Z
+members_058:
+  id: 58
+  nsid: 114026719@N03
+  username: GeorgeEvans44
+  member_type: 0
+  real_name: 
+  email: 
+  created_at: 2015-01-05 07:53:49.000000000 Z
+  updated_at: 2015-01-05 07:53:49.000000000 Z
+members_059:
+  id: 59
+  nsid: 27813593@N00
+  username: brian395
+  member_type: 0
+  real_name: Brian Eager
+  email: 
+  created_at: 2015-01-05 07:53:51.000000000 Z
+  updated_at: 2015-01-05 07:53:51.000000000 Z

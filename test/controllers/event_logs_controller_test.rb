@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EventLogsControllerTest < ActionController::TestCase
   setup do
-    @event_log = event_logs(:one)
+    @event_log = event_logs(:event_log_001)
   end
 
   test "should get index" do

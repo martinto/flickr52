@@ -1,11 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
+---
+event_log_001:
+  id: 1
   when: 2015-01-03 18:38:56
-  message: MyString
-  backtrace: MyText
-
-two:
-  when: 2015-01-03 18:38:56
-  message: MyString
-  backtrace: MyText
+  message: error found
+  backtrace: backtrace text
