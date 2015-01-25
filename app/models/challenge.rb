@@ -8,17 +8,16 @@ class Challenge < ActiveRecord::Base
   validates_presence_of :url
 
   def update_from_flickr
-    flickr_group = FlickrApi.new(url)
-    update_group_members(flickr_group)
-    update_group_photo_data(flickr_group)
-  end
-
-  def update_group_members(flickr_group)
+    flickr_group = FlickrGroup.new(url)
     if self.flickr_id.nil?
       self.flickr_id = flickr_group.group_info['id']
       save!
     end
+    update_challenge_members(flickr_group)
+    update_challenge_photo_data(flickr_group)
+  end
 
+  def update_challenge_members(flickr_group)
     # Now update the list of group members.
     group_members = flickr_group.group_members
     # {"nsid"=>"93469079@N04", "username"=>"msmoooey", "iconserver"=>"7406", "iconfarm"=>8, "membertype"=>"2", "realname"=>"Mandy"}
@@ -69,7 +68,7 @@ class Challenge < ActiveRecord::Base
     { wrong_year: wrong_year, no_tag: no_tag, wrong_tag: wrong_tag }
   end
 
-  def update_group_photo_data(flickr_group)
+  def update_challenge_photo_data(flickr_group)
     photos = flickr_group.group_photos
     # [{"id"=>"16152566212", "owner"=>"57460915@N07", "secret"=>"8e5277be2c", "server"=>"7572", "farm"=>8, "title"=>"Old Country Roses Pattern", "ispublic"=>1, "isfriend"=>0, "isfamily"=>0, "ownername"=>"jscollins7", "dateadded"=>"1420004161", "dateupload"=>"1420004160", "datetaken"=>"2014-12-23 08:27:48", "datetakengranularity"=>"0", "datetakenunknown"=>"0", "tags"=>"ch2014wk51"}
     photos.each do |p|
@@ -79,16 +78,8 @@ class Challenge < ActiveRecord::Base
         unless photo
           EventLog.create! when: Time.now, message: "Unable to find photo #{p['id']}"
         else
-          unless same_photo_data?(p, photo)
-            photo.secret = p['secret']
-            photo.title = p['title']
-            photo.is_public = p['ispublic'] == 1
-            photo.date_added = Time.at(p['dateadded'].to_i)
-            photo.date_uploaded = Time.at(p['dateuploaded'].to_i)
-            photo.date_taken = Time.parse(p['datetaken'])
-            photo.date_taken_granularity = p['datetakengranularity'].to_i
-            photo.tags = p['tags']
-            photo.save!
+          unless photo.is_same_as?(p)
+            photo.update_from(p)
           end
         end
       else
@@ -131,24 +122,12 @@ class Challenge < ActiveRecord::Base
     return week.subject
   end
 
-  private
-
-  def same_photo_data?(p, photo)
-    (p['secret'] == photo.secret) &&
-        (p['title'] == photo.title) &&
-        ((p['ispublic'] == 1) == photo.is_public) &&
-        (Time.at(p['dateadded'].to_i) == photo.date_added) &&
-        (Time.at(p['dateuploaded'].to_i) == photo.date_uploaded) &&
-        (Time.parse(p['datetaken']) == photo.date_taken) &&
-        (p['datetakengranularity'].to_i == photo.date_taken_granularity) &&
-        (p['tags'] == photo.tags)
-  end
-
-  def topic_list
-    result = Array.new
-    weeks.each do |week|
-      result[week.week_number] = week.subject
-    end
-    return result
-  end
+ private
+   def topic_list
+     result = Array.new
+     weeks.each do |week|
+       result[week.week_number] = week.subject
+     end
+     return result
+   end
 end

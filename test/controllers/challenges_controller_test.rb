@@ -18,7 +18,7 @@ class ChallengesControllerTest < ActionController::TestCase
 
   test "should create challenge" do
     assert_difference('Challenge.count') do
-      post :create, challenge: { title: 'Challenge 2016', year: 2016 }
+      post :create, challenge: { title: 'Challenge 2016', 'year(1i)' => 2016, 'year(2i)' => 1, 'year(3i)' => 1, url: 'http://www.flickr.com/groups/challenge2016/' }
     end
 
     assert_redirected_to challenge_path(assigns(:challenge))

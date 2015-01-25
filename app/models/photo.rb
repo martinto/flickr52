@@ -49,4 +49,28 @@ class Photo < ActiveRecord::Base
     end
     return tag_week_no
   end
+
+  def is_same_as?(p)
+    (p['secret'] == self.secret) &&
+        (p['title'] == self.title) &&
+        ((p['ispublic'] == 1) == self.is_public) &&
+        (Time.at(p['dateadded'].to_i) == self.date_added) &&
+        (Time.at(p['dateuploaded'].to_i) == self.date_uploaded) &&
+        (Time.parse(p['datetaken']) == self.date_taken) &&
+        (p['datetakengranularity'].to_i == self.date_taken_granularity) &&
+        (p['tags'] == self.tags)
+  end
+
+  def update_from(p)
+    self.secret = p['secret']
+    self.title = p['title']
+    self.is_public = p['ispublic'] == 1
+    self.date_added = Time.at(p['dateadded'].to_i)
+    self.date_uploaded = Time.at(p['dateuploaded'].to_i)
+    self.date_taken = Time.parse(p['datetaken'])
+    self.date_taken_granularity = p['datetakengranularity'].to_i
+    self.tags = p['tags']
+    self.save!
+  end
+
 end

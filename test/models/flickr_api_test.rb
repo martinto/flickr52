@@ -9,7 +9,7 @@ class FlickrApiTest < ActiveSupport::TestCase
   end
 
   test 'get group members' do
-    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
+    flickr_api = FlickrGroup.new('http://www.flickr.com/groups/challenge2014/')
     members = flickr_api.group_members
     assert_equal 16, members.count
     mandy = members.select { |m| m['realname'] == 'Mandy'}
@@ -18,7 +18,7 @@ class FlickrApiTest < ActiveSupport::TestCase
   end
 
   test 'get group photos' do
-    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2013/')
+    flickr_api = FlickrGroup.new('http://www.flickr.com/groups/challenge2013/')
     photos = flickr_api.group_photos
     assert_equal 1303, photos.count
   end
@@ -36,7 +36,7 @@ class FlickrApiTest < ActiveSupport::TestCase
   end
 
   test 'get group info from url' do
-    flickr_api = FlickrApi.new('http://www.flickr.com/groups/challenge2014/')
+    flickr_api = FlickrGroup.new('http://www.flickr.com/groups/challenge2014/')
     group_info = flickr_api.group_info
     assert_equal '2453086@N23', group_info['id']
     assert_equal 'Challenge 2014', group_info['groupname']
