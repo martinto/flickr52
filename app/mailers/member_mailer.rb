@@ -25,7 +25,7 @@ class MemberMailer < ActionMailer::Base
 private
   def to_whom(photo)
     to = photo.member.email
-    if Rails.env.development?
+    if Rails.env.development? || to.nil?
       to = 'martin.tomes@gmail.com'
     end
     return to
