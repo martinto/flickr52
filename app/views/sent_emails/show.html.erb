@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= link_to @sent_email.photo.title, @sent_email.photo.get_flickr_url %>
+</p>
+
+<p>
+  <strong>Sent at:</strong>
+  <%= @sent_email.sent_at %>
+</p>
+
+<p>
+  <strong>Error type:</strong>
+  <%= @sent_email.error_type %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sent_email.title %>
+</p>
+
+<%= link_to 'Back', sent_emails_path %>

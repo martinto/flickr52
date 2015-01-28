@@ -2,6 +2,7 @@ class Photo < ActiveRecord::Base
   belongs_to :member
   belongs_to :challenge
   belongs_to :week
+  has_many :sent_emails
 
   validates_presence_of :flickr_id
   validates_numericality_of :flickr_id
@@ -71,6 +72,10 @@ class Photo < ActiveRecord::Base
     self.date_taken_granularity = p['datetakengranularity'].to_i
     self.tags = p['tags']
     self.save!
+  end
+
+  def email_sent?
+    return sent_emails.count > 0
   end
 
 end

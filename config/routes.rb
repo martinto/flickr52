@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root 'challenges#index'
 
+  get 'sent_emails' => 'sent_emails#index'
+  get 'sent_emails/:id' => 'sent_emails#show', as: :sent_email
+
   resources :event_logs
 
   resources :scaffolds

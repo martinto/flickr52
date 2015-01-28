@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109194454) do
+ActiveRecord::Schema.define(version: 20150126074326) do
 
   create_table "challenges", force: true do |t|
     t.date     "year"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(version: 20150109194454) do
     t.datetime "updated_at"
     t.integer  "week_id"
     t.string   "flickr_url"
+  end
+
+  create_table "sent_emails", force: true do |t|
+    t.integer  "photo_id"
+    t.datetime "sent_at"
+    t.string   "error_type"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "weeks", force: true do |t|
