@@ -13,12 +13,12 @@
           <%= error[:photo].member.display_name %></td><td><%= error[:message] %>
         </td>
         <td>
-          [<a href="<%= error[:url] %>">photo</a>]
-          [<%= link_to 'send email', challenge_send_email_url(@challenge, error[:photo], error: @error_type), method: :put %>]
+          <a href="<%= error[:url] %>">photo</a>
+          <%= link_to 'send email', challenge_send_email_url(@challenge, error[:photo], error: @error_type), method: :put %>
           <% if error[:photo].email_sent? %>
             <span class="status">emails sent:
-              <% error[:photo].sent_emails.each do |email| %>
-                [<%= link_to email.id.to_s, sent_email_url(email) %>]
+              <% error[:photo].sent_emails.each_with_index do |email, index| %>
+                <%= link_to (index + 1).to_s, sent_email_url(email) %>
               <% end %></span>
           <% end %>
         </td>

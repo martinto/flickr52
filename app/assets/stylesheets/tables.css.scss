@@ -1,0 +1,18 @@
+table {
+  th, td {
+    background-color: transparent;
+  }
+  thead tr {
+    outline: thin solid #000000;
+  }
+  th {
+    text-align: left;
+  }
+
+  th, td {
+    padding-left: 1em;
+  }
+  td {
+    padding-top: 0.2em;
+  }
+}

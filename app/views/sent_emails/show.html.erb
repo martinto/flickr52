@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>To:</strong>
+  <%= @sent_email.photo.member.display_name %>
+</p>
 <p>
   <strong>Photo:</strong>
   <%= link_to @sent_email.photo.title, @sent_email.photo.get_flickr_url %>
@@ -20,4 +23,4 @@
   <%= @sent_email.title %>
 </p>
 
-<%= link_to 'Back', sent_emails_path %>
+<%= link_to 'Back', sent_emails_path, :class => 'button' %>

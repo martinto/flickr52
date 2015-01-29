@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<div><a href="/challenges">challenges</a> <a href="/event_logs">event log</a></div>
+<div id="header">
+  <div class="main-title">Challenge 52</div>
+</div>
+<nav>
+  <a href="<%= challenges_path %>">challenges</a>
+  <a href="<%= event_logs_path %>">event log</a>
+  <a href="<%= sent_emails_path %>">emails</a>
+</nav>
 
 <%= yield %>
 

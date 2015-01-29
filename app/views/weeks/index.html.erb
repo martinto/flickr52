@@ -24,6 +24,6 @@
 
 <br>
 
-<%= link_to 'New Week', new_challenge_week_path(@challenge) %>
-<%= link_to 'Bulk Add', challenge_bulk_add_path(@challenge) %>
-<%= link_to 'Clear', challenge_clear_weeks_path(@challenge), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'New Week', new_challenge_week_path(@challenge), :class => 'button' %>
+<%= link_to 'Bulk Add', challenge_bulk_add_path(@challenge), :class => 'button' %>
+<%= link_to 'Clear', challenge_clear_weeks_path(@challenge), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'button' %>

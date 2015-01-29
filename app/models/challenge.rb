@@ -58,10 +58,10 @@ class Challenge < ActiveRecord::Base
           end
         end
         if week_tag.empty?
-          no_tag << { photo: p, message: "No challenge tag, it should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
+          no_tag << { photo: p, message: "Tag should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
         elsif week_tag != correct_week_tag
           tagged_topic = topics[tag_week_no.to_i]
-          wrong_tag << { photo: p,  message: "Incorrect challenge tag of #{week_tag} (#{tagged_topic}), it should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
+          wrong_tag << { photo: p,  message: "Tagged as #{week_tag} (#{tagged_topic}), should be #{correct_week_tag} (#{topics[p.week_number]})", url: p.get_flickr_url }
         end
       end
     end
@@ -130,7 +130,7 @@ class Challenge < ActiveRecord::Base
    def topic_list
      result = Array.new
      weeks.each do |week|
-       result[week.week_number] = week.subject
+       result[week.week_number] = week.subject.strip
      end
      return result
    end
