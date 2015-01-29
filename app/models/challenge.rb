@@ -52,8 +52,8 @@ class Challenge < ActiveRecord::Base
         week_tag = ''
         tag_week_no = false
         p.tags.split(/\s/).each do |tag|
-          if match_data = /(ch#{year.year}wk)(\d+)/.match(tag)
-            week_tag = match_data[1] + match_data[2]
+          if match_data = Photo::CHALLENGE_TAG_PATTERN.match(tag)
+            week_tag = 'ch' + match_data[1] + 'wk' + match_data[2]
             tag_week_no = match_data[2]
           end
         end
@@ -118,8 +118,12 @@ class Challenge < ActiveRecord::Base
   end
 
   def topic(week_number)
-    week = Week.where(challenge_id: self.id, week_number: week_number).first
-    return week.subject
+    result = ''
+    if week_number
+      week = Week.where(challenge_id: self.id, week_number: week_number).first
+      result = week.subject
+    end
+    return result
   end
 
  private
