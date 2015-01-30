@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126074326) do
+ActiveRecord::Schema.define(version: 20150130164626) do
 
   create_table "challenges", force: true do |t|
     t.date     "year"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150126074326) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
   end
 
   create_table "weeks", force: true do |t|

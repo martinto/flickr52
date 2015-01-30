@@ -23,4 +23,9 @@
   <%= @sent_email.title %>
 </p>
 
+<p>
+  <strong>Message:</strong>
+  <%= @sent_email.body.html_safe %>
+</p>
+
 <%= link_to 'Back', sent_emails_path, :class => 'button' %>

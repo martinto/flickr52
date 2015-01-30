@@ -78,13 +78,23 @@ class ChallengesController < ApplicationController
     photo_id = params[:id]
     photo = Photo.find(photo_id)
     error_type = params[:error]
+    mail = nil
     if error_type == 'wrong_year'
-      MemberMailer.wrong_year_email(photo).deliver
+      mail = MemberMailer.wrong_year_email(photo)
     elsif error_type == 'no_tag'
-      MemberMailer.no_tag_email(photo).deliver
+      mail = MemberMailer.no_tag_email(photo)
     elsif error_type == 'wrong_tag'
-      MemberMailer.wrong_tag_email(photo).deliver
+      mail = MemberMailer.wrong_tag_email(photo)
     end
+    # Extract the HTML email and put it in the database.
+    mail_content = nil
+    mail.body.parts.each do |part|
+      if /Content-Type: text\/html/.match(part.header.to_s)
+        mail_content = part.body.raw_source
+      end
+    end
+    SentEmail.create! photo: photo, sent_at: DateTime.now, error_type: error_type, title: "#{photo.challenge.title}: Photo taken in wrong year", body: mail_content
+    mail.deliver
     redirect_to challenge_flickr_check_photos_url(params[:challenge_id])
   end
 

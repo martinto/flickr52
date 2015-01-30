@@ -41,6 +41,16 @@ class Photo < ActiveRecord::Base
     return week_tag
   end
 
+  def tag
+    result = false
+    self.tags.split(/\s/).each do |tag|
+      if match_data = CHALLENGE_TAG_PATTERN.match(tag)
+        result = tag
+      end
+    end
+    return result
+  end
+
   def tagged_as_week
     tag_week_no = false
     self.tags.split(/\s/).each do |tag|
