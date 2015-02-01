@@ -22,10 +22,11 @@
   <strong>Title:</strong>
   <%= @sent_email.title %>
 </p>
-
+<% if @sent_email.body %>
 <p>
   <strong>Message:</strong>
   <%= @sent_email.body.html_safe %>
 </p>
+<% end %>
 
 <%= link_to 'Back', sent_emails_path, :class => 'button' %>
