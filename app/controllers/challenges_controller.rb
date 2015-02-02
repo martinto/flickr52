@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge, only: [:show, :edit, :update, :destroy, :remove_member]
 
   # GET /challenges
   # GET /challenges.json
@@ -17,6 +17,8 @@ class ChallengesController < ApplicationController
   def flickr_check_photos
     @challenge = Challenge.find(params[:challenge_id])
     @errors = @challenge.flickr_check_photos
+    @no_photos = @challenge.members_with_no_photos
+    @recent = @challenge.recent_contributions
   end
 
   # GET /challenges/1
@@ -98,10 +100,22 @@ class ChallengesController < ApplicationController
     redirect_to challenge_flickr_check_photos_url(params[:challenge_id])
   end
 
+  # PUT /challenges/2/remove_member/:id
+  def remove_member
+    member = Member.find(params[:id])
+    @challenge.members.delete(member)
+    flash[:notice] = "Removed member #{member.display_name} from challenge #{@challenge.title}"
+    redirect_to challenge_members_url(@challenge)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
-      @challenge = Challenge.find(params[:id])
+      if params.has_key?(:challenge_id)
+        @challenge = Challenge.find(params[:challenge_id])
+      else
+        @challenge = Challenge.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

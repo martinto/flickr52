@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     put 'flickr_update' => 'challenges#flickr_update', as: :flickr_update
     get 'flickr_check_photos' => 'challenges#flickr_check_photos', as: :flickr_check_photos
     put 'send_email/:id' => 'challenges#send_email', as: :send_email
+    put 'remove_member/:id' => 'challenges#remove_member', as: :remove_member
 
     # Membership
     resources :members

@@ -1,15 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  photo: 1
-  sent_at: 2015-01-26 07:43:26
-  error_type: MyString
-  title: MyString
-  message: MyText
-
-two:
-  photo: 1
-  sent_at: 2015-01-26 07:43:26
-  error_type: MyString
-  title: MyString
-  message: MyText

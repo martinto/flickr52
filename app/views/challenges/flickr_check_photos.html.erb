@@ -15,3 +15,48 @@
    @error_type = :wrong_tag %>
 <h2>Wrong Tag</h2>
 <%= render 'show_errors' %>
+
+<% if @no_photos.count > 0 %>
+    <h2>Members with no posts</h2>
+    <table>
+      <thead>
+      <th>User name</th>
+      <th>Real name</th>
+      <th></th>
+      </thead>
+      <tbody>
+      <% @no_photos.each do |member| %>
+          <tr>
+            <td><%= member.username %></td>
+            <td><%= member.real_name.empty? ? '-Not given-' : member.real_name %></td>
+            <td><%= link_to 'Contact', "https://www.flickr.com/mail/write/?to=#{member.nsid}" %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+<h2>Most recent contributions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Uploads</th>
+      <th>Most Recent</th>
+      <th>Challenge</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @recent.each do |r| %>
+    <tr>
+      <td><%= r[1][:member].username %></td>
+      <td><%= r[1][:count] %></td>
+      <td><%= r[1][:date_taken].to_formatted_s(:long) %></td>
+      <td>&nbsp;</td>
+      <td><%= link_to 'photo', r[1][:photo].flickr_url %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -14,3 +14,4 @@
 </table>
 
 <%= link_to 'Back', challenge_members_path, :class => 'button' %>
+<%= link_to 'Remove', challenge_remove_member_url(@challenge, @member), method: :put, :class => 'button' %>

@@ -126,7 +126,35 @@ class Challenge < ActiveRecord::Base
     return result
   end
 
- private
+  def members_with_no_photos
+    members.select { |m| m.photos.where(:challenge_id => id).count == 0}
+  end
+
+  def recent_contributions
+    m = Hash.new
+    photos.each do |photo|
+      if photo.member.member_type > 0
+        if m.has_key?(photo.member_id)
+          m[photo.member_id][:count] += 1
+          if photo.date_uploaded > m[photo.member_id][:date_taken]
+            m[photo.member_id][:date_taken] = photo.date_taken
+            m[photo.member_id][:challenge] = photo.challenge
+            m[photo.member_id][:photo] = photo
+          end
+        else
+          m[photo.member_id] = Hash.new
+          m[photo.member_id][:count] = 1
+          m[photo.member_id][:date_taken] = photo.date_taken
+          m[photo.member_id][:challenge] = photo.challenge
+          m[photo.member_id][:photo] = photo
+          m[photo.member_id][:member] = photo.member
+        end
+      end
+    end
+    m.sort_by { |k, v| v[:date_taken] }
+  end
+
+  private
    def topic_list
      result = Array.new
      weeks.each do |week|

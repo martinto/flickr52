@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Flickr52</title>
+  <title>Challenge 52</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div id="header">
   <div class="main-title">Challenge 52</div>
 </div>
@@ -16,6 +15,9 @@
   <a href="<%= event_logs_path %>">event log</a>
   <a href="<%= sent_emails_path %>">emails</a>
 </nav>
+<% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 
 <%= yield %>
 

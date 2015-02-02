@@ -38,6 +38,24 @@ class ChallengeTest < ActiveSupport::TestCase
     assert_equal 81, wrong_tag.count
     reflections = wrong_tag.select { |e| e[:photo].flickr_id == 11553910906 }.first
     assert_equal 'Incorrect challenge tag of ch2013wk51 (Multiple exposure), it should be ch2013wk52 (Reflections)', reflections[:message]
-
   end
+
+  test 'member with no photos' do
+    challenge = Challenge.find_by_title('Challenge 2014')
+    member = Member.create! nsid: '1234@8976', username: 'fredbl', member_type: 1, real_name: 'Fred Bloggs'
+    challenge.members << member
+    member = Member.create! nsid: '1234@8997', username: 'qwe', member_type: 1, real_name: 'Lkj Nij'
+    challenge.members << member
+    none = challenge.members_with_no_photos
+    assert_equal 2, none.count
+    assert_equal 1, none.select {|m| m.username == 'fredbl'}.count
+    assert_equal 1, none.select {|m| m.username == 'qwe'}.count
+  end
+
+  test 'recent contributions' do
+    challenge = Challenge.find_by_title('Challenge 2014')
+    contributions = challenge.recent_contributions
+    assert_equal 16, contributions.count
+  end
+
 end
