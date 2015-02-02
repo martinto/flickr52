@@ -30,14 +30,14 @@ class ChallengeTest < ActiveSupport::TestCase
     assert_equal '\'Dreaming - Challenge 2013 Week 17 (software created)\' was taken in 2012 for the 2013 challenge', dreaming[:message]
 
     no_tag = result[:no_tag]
-    assert_equal 7, no_tag.count
+    assert_equal 254, no_tag.count
     ch2013wk44 = no_tag.select { |e| e[:photo].flickr_id == 10562865935 }.first
-    assert_equal 'No challenge tag, it should be ch2013wk44 (Colour)', ch2013wk44[:message]
+    assert_equal 'Tag should be ch2013wk44 (Colour)', ch2013wk44[:message]
 
     wrong_tag = result[:wrong_tag]
-    assert_equal 81, wrong_tag.count
+    assert_equal 67, wrong_tag.count
     reflections = wrong_tag.select { |e| e[:photo].flickr_id == 11553910906 }.first
-    assert_equal 'Incorrect challenge tag of ch2013wk51 (Multiple exposure), it should be ch2013wk52 (Reflections)', reflections[:message]
+    assert_equal 'Tagged as ch2013wk51 (Multiple exposure), should be ch2013wk52 (Reflections)', reflections[:message]
   end
 
   test 'member with no photos' do
@@ -55,7 +55,7 @@ class ChallengeTest < ActiveSupport::TestCase
   test 'recent contributions' do
     challenge = Challenge.find_by_title('Challenge 2014')
     contributions = challenge.recent_contributions
-    assert_equal 16, contributions.count
+    assert_equal 19, contributions.count
   end
 
 end

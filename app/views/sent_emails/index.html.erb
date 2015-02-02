@@ -14,7 +14,7 @@
   <tbody>
     <% @sent_emails.each do |sent_email| %>
       <tr>
-        <td><%= sent_email.photo.title %></td>
+        <td><%= sent_email.photo.nil? ? '' : sent_email.photo.title %></td>
         <td><%= sent_email.sent_at %></td>
         <td><%= sent_email.error_type %></td>
         <td><%= sent_email.title %></td>
