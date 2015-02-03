@@ -55,7 +55,7 @@
       <td><%= r[1][:count] %></td>
       <td><%= r[1][:date_taken].to_formatted_s(:long) %></td>
       <td>&nbsp;</td>
-      <td><%= link_to 'photo', r[1][:photo].flickr_url %></td>
+      <td><%= link_to 'photo', r[1][:photo].get_flickr_url %></td>
     </tr>
   <% end %>
   </tbody>
