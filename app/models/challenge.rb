@@ -136,7 +136,7 @@ class Challenge < ActiveRecord::Base
       if photo.member.member_type > 0
         if m.has_key?(photo.member_id)
           m[photo.member_id][:count] += 1
-          if photo.date_uploaded > m[photo.member_id][:date_taken]
+          if photo.date_taken > m[photo.member_id][:date_taken]
             m[photo.member_id][:date_taken] = photo.date_taken
             m[photo.member_id][:challenge] = photo.challenge
             m[photo.member_id][:photo] = photo
